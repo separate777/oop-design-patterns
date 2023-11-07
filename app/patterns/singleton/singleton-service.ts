@@ -1,4 +1,4 @@
-import {Logger} from "../util/logger";
+import {Logger} from "../../util/logger";
 
 export class SingletonService {
     static instance: SingletonService;

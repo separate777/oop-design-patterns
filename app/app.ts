@@ -1,16 +1,13 @@
-import {SingletonService} from "./singleton/singleton-service";
+import {listenToUrlChanges, routeTo} from "./routing/router";
 
-function main() {
+(window as any).navigate = navigate;
+function app() {
     console.log('App DESIGN PATTERNS started');
-    registerEventListeners();
+    listenToUrlChanges();
+    navigate( location.pathname);
+}
+function navigate(location: string) {
+    routeTo(location);
 }
 
-function getSingletonInstance() {
-    const singleton: SingletonService = SingletonService.getSingletonService();
-}
-
-function registerEventListeners() {
-    document.getElementById("trigger").addEventListener("click", () => {getSingletonInstance()});
-}
-
-main();
+app();
