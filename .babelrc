@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "babel-preset-env",
+      {
+        "exclude": [
+          "@babel/plugin-transform-classes"
+        ]
+      },
+      {
+        "targets": {
+          "browsers": "last 2 chrome versions"
+        }
+      }
+    ]
+  ]
+}
