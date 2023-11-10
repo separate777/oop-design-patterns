@@ -1,6 +1,6 @@
-
 function update(logs: Array<string>) {
-    document.getElementById("log").innerText = logs.join("\n");
+    const log = document.getElementById("log")
+        if (log) {log.innerText = logs.join("\n");}
 }
 export class Logger {
     private logs: Array<string> = [];

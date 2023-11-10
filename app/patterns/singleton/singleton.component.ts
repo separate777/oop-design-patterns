@@ -4,7 +4,6 @@ export class SingletonComponent extends HTMLElement {
         super();
     }
 
-
     connectedCallback() {
         console.log("Custom element added to page.");
     }
@@ -17,7 +16,7 @@ export class SingletonComponent extends HTMLElement {
         console.log("Custom element moved to new page.");
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback(name: any, oldValue: any, newValue: any) {
         console.log(`Attribute ${name} has changed.`);
     }
 }

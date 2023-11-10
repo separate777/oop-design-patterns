@@ -12,12 +12,12 @@ const routes: Array<Route> = [
 
 function replaceContentOf(nodeId: string, html: Element) {
     const parentElement = document.getElementById(nodeId);
-    parentElement.children[0]?.remove();
-    parentElement.appendChild(html);
+    parentElement?.children[0]?.remove();
+    parentElement?.appendChild(html);
 }
 
 function updateBrowserHistory(url: string) {
-    history.pushState({url}, null, url);
+    history.pushState({url}, "", url);
 }
 
 export function listenToUrlChanges() {
