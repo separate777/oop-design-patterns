@@ -1,3 +1,6 @@
+import {SingletonComponent} from "../patterns/singleton/singleton.component";
+import {NotFoundComponent} from "./not-found-component";
+
 type Route = {
     path: string,
     component: HTMLElement
@@ -6,9 +9,15 @@ type Route = {
 const routes: Array<Route> = [
     {
         path: '/singleton',
-        component: document.createElement("app-singleton")
+        component: SingletonComponent.getElement()
     },
 ]
+
+const notFoundRoute: Route = {
+    component: NotFoundComponent.getElement(),
+    path: "/not-found"
+
+}
 
 function replaceContentOf(nodeId: string, html: Element) {
     const parentElement = document.getElementById(nodeId);
@@ -35,5 +44,8 @@ export function routeTo(url: string, updateHistory= true) {
     if (targetRoute) {
         const newHtml = targetRoute.component;
         replaceContentOf('content', newHtml);
+    } else {
+        console.log(`route ${url} not found`);
+        replaceContentOf('content', notFoundRoute.component);
     }
 }

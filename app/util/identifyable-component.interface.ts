@@ -1,5 +1,5 @@
 export type IdentifyableHtmlComponent=  {
-     componentId: number;
+    componentId: number;
     connectedCallback: () => void;
     disconnectedCallback:() => void;
     adoptedCallback:() => void;
