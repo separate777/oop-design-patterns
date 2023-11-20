@@ -10,6 +10,7 @@ export class NotFoundComponent extends HTMLElement implements IdentifyableHtmlCo
     connectedCallback() {
         // get the template from the dom
         const template = document.getElementById('not-found-template');
+        console.log(template);
         if (template instanceof HTMLTemplateElement) {
             const content = template.content.cloneNode(true);
             if (content) {

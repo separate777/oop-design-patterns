@@ -1,6 +1,7 @@
 import {listenToUrlChanges, routeTo} from "./routing/router";
 
 (window as any).navigate = navigate;
+
 function app() {
     console.log('App DESIGN PATTERNS started');
     listenToUrlChanges();
@@ -11,4 +12,6 @@ function navigate(location: string) {
     routeTo(location);
 }
 
-app();
+document.addEventListener('DOMContentLoaded', () => {
+    app();
+})
